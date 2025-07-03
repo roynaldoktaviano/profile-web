@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
     <section className="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white p-6 sm:p-8">
       <div className="mb-8 transform hover:scale-110 transition-transform duration-300">
         <Image
-          src="/images/profile.jpg"
+          src="/me.JPG"
           alt="Foto Profil Anda"
           width={160}
           height={160}

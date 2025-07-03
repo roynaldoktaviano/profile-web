@@ -4,6 +4,7 @@ import About from "@/components/About";
 // import Skills from './(sections)/skills';
 import Projects from "@/components/Projects";
 import Contact from "@/components/ContactForm";
+import CareerJourneySection from "@/components/Career";
 // Anda juga bisa menempatkan komponen-komponen ini di folder /components jika lebih suka
 
 export default function HomePage() {
@@ -16,9 +17,9 @@ export default function HomePage() {
       <div id="about">
         <About />
       </div>
-      {/* <div id="skills">
-        <Skills />
-      </div> */}
+      <div id="skills">
+      <CareerJourneySection />
+      </div>
       <div id="projects">
         <Projects />
       </div>

@@ -19,7 +19,7 @@ const About: React.FC = () => {
           <div className="w-full md:w-1/3 flex justify-center">
             <div className="relative w-60 h-60 md:w-72 md:h-72 rounded-full overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
               <Image
-                src="/images/profile-about.jpg" // Ganti dengan path gambar Anda
+                src="/images/me.JPG" // Ganti dengan path gambar Anda
                 alt="Foto Saya"
                 layout="fill"
                 objectFit="cover"
