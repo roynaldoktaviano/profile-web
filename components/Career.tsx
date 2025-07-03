@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const careerTimeline = [
   {
@@ -28,12 +28,21 @@ const careerTimeline = [
 const CareerJourneySection = () => {
   const [selected, setSelected] = useState<number | null>(null);
 
-  return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        {/* <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">Karir di Perusahaan</h2> */}
+  // Disable scroll saat modal aktif
+  useEffect(() => {
+    if (selected !== null) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [selected]);
 
-        {/* Timeline Line */}
+  return (
+    <section className="py-20 bg-white relative">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">Karir di Perusahaan</h2>
+
+        {/* Garis Timeline */}
         <div className="relative">
           <div className="absolute top-1/2 left-0 w-full h-1 bg-blue-500 transform -translate-y-1/2"></div>
 
@@ -42,9 +51,17 @@ const CareerJourneySection = () => {
               const isEven = index % 2 === 0;
 
               return (
-                <div key={index} className="relative w-1/4 text-center cursor-pointer" onClick={() => setSelected(index)}>
+                <div
+                  key={index}
+                  className="relative w-1/4 text-center cursor-pointer"
+                  onClick={() => setSelected(index)}
+                >
                   {/* Teks */}
-                  <div className={`absolute ${isEven ? '-top-16' : 'top-10'} left-1/2 transform -translate-x-1/2`}>
+                  <div
+                    className={`absolute ${
+                      isEven ? '-top-16' : 'top-10'
+                    } left-1/2 transform -translate-x-1/2`}
+                  >
                     <p className="text-sm font-medium text-gray-700">{item.year}</p>
                     <p className="text-xs text-gray-500">{item.title}</p>
                   </div>
@@ -59,18 +76,44 @@ const CareerJourneySection = () => {
 
         {/* Modal */}
         {selected !== null && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white p-6 rounded-xl shadow-xl max-w-md w-full relative">
-              <button
-                className="absolute top-2 right-3 text-gray-500 hover:text-red-600 text-xl"
-                onClick={() => setSelected(null)}
+          <>
+            {/* Overlay */}
+            <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 transition-opacity duration-300">
+              {/* Modal Box */}
+              <div
+                className="bg-white p-6 rounded-xl shadow-xl max-w-md w-full relative animate-modal"
+                style={{ animation: 'scaleFadeIn 0.3s ease-out' }}
               >
-                &times;
-              </button>
-              <h3 className="text-xl font-bold text-blue-700 mb-2">{careerTimeline[selected].year} – {careerTimeline[selected].title}</h3>
-              <p className="text-gray-700">{careerTimeline[selected].description}</p>
+                {/* Tombol Close */}
+                <button
+                  className="absolute top-2 right-3 text-gray-500 hover:text-red-600 text-xl"
+                  onClick={() => setSelected(null)}
+                >
+                  &times;
+                </button>
+
+                {/* Konten */}
+                <h3 className="text-xl font-bold text-blue-700 mb-2">
+                  {careerTimeline[selected].year} – {careerTimeline[selected].title}
+                </h3>
+                <p className="text-gray-700">{careerTimeline[selected].description}</p>
+              </div>
             </div>
-          </div>
+
+            {/* Keyframe animasi */}
+            <style jsx>{`
+              @keyframes scaleFadeIn {
+                from {
+                  opacity: 0;
+                  transform: scale(0.95);
+                }
+                to {
+                  opacity: 1;
+                  transform: scale(1);
+                }
+              }
+            `}</style>
+          </>
         )}
       </div>
     </section>

@@ -8,8 +8,8 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' }); // Untuk digunakan dengan Tailwind
 
 export const metadata: Metadata = {
-  title: 'Nama Anda - Portofolio',
-  description: 'Portofolio profesional Nama Anda sebagai [Profesi Anda]',
+  title: 'Roynald Oktaviano - Portofolio',
+  description: 'Roy Personal Website - Portofolio Website Developer',
   // Tambahkan metadata lain seperti openGraph, icons, dll.
 };
 

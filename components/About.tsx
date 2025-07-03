@@ -30,10 +30,10 @@ const About: React.FC = () => {
 
           <div className="w-full md:w-2/3 text-center md:text-left">
             <h3 className="text-2xl font-semibold text-slate-800 mb-4">
-              Halo, Saya [Nama Anda]!
+              Halo, Saya Roynald Oktaviano Kalele!
             </h3>
             <p className="text-slate-600 leading-relaxed mb-4">
-              Saya adalah seorang [Profesi Anda, contoh: Web Developer] yang bersemangat dengan pengalaman
+              Saya adalah seorang Website Developer yang bersemangat dengan pengalaman
               dalam membangun aplikasi web yang modern dan responsif. Saya selalu antusias untuk
               mempelajari teknologi baru dan menemukan solusi kreatif untuk berbagai tantangan.
             </p>
@@ -42,9 +42,9 @@ const About: React.FC = () => {
               fungsional tetapi juga memberikan pengalaman pengguna yang menyenangkan. Saya percaya
               kolaborasi tim yang baik dan perhatian terhadap detail adalah kunci kesuksesan proyek.
             </p>
-            <p className="text-slate-600 leading-relaxed">
+            {/* <p className="text-slate-600 leading-relaxed">
               Di luar coding, saya menikmati [Sebutkan Hobi atau Minat Anda, contoh: membaca buku tentang teknologi, bermain musik, atau hiking].
-            </p>
+            </p> */}
             {/* (Opsional) Tambahkan tombol CTA jika perlu, misalnya link ke CV */}
             {/* <div className="mt-6 text-center md:text-left">
               <a
