@@ -16,11 +16,11 @@ const Hero: React.FC = () => {
           width={160}
           height={160}
           className="rounded-full object-cover border-4 border-purple-500 shadow-xl"
-          priority // Penting untuk LCP
+          priority
         />
       </div>
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-3 tracking-tight">
-        <span className="block">Nama Anda</span>
+        <span className="block">Roynald Oktaviano</span>
       </h1>
       <h2 className="text-xl sm:text-2xl md:text-3xl text-purple-300 mb-6 font-medium">
         Full-Stack Developer & UI/UX Enthusiast
